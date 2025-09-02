@@ -1,7 +1,7 @@
 ## Développez un programme en JavaScript qui charge les informations des élèves à partir du fichier student.txt
 
-### Implémentez les fonctionnalités suivantes dans votre système de gestion des élèves :
 
+### Implémentez les fonctionnalités suivantes dans votre système de gestion des élèves :
 - Une fonctionnalité pour afficher la liste du nom de tous les élèves.
 - Une fonctionnalité pour rechercher et afficher les informations d'un élève spécifique en fonction de son nom.
 - Une fonctionnalité pour filtrer et afficher les élèves ayant obtenu une moyenne supérieure à une valeur spécifiée.
