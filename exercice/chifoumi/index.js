@@ -1,7 +1,7 @@
+import "dotenv/config";
 import readline from "node:readline";
 
-// Définition explicite des choix
-const CHOICES = ["pierre", "papier", "ciseaux"];
+const CHOICES = [process.env.ROCK, process.env.PAPER, process.env.SCISSORS];
 const WIN_CONDITIONS = {
   pierre: "ciseaux",
   papier: "pierre",
