@@ -1,14 +1,20 @@
-process.stdin.on('data', (chunk) => {
-	const text = chunk.toString().replace("\n", "");
-	
-	if (!text.includes("exit")) {
-		console.log(text)
-		return
-	}
-	process.exit(0)
-})
+import m from "./exemple/exportExemple.js"
 
-console.log("hello")
+console.log(m(1, 2))
+
+// console.log(m.name)
+// console.log(m.addition(1, 2))
+// process.stdin.on('data', (chunk) => {
+// 	const text = chunk.toString().replace("\n", "");
+//
+// 	if (!text.includes("exit")) {
+// 		console.log(text)
+// 		return
+// 	}
+// 	process.exit(0)
+// })
+//
+// console.log("hello")
 
 
 
