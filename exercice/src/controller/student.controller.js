@@ -4,7 +4,7 @@ import fs from "node:fs";
 // process.cwd() renvoi le chemin absolu du dossier ou Node est executé.
 const cwd = process.cwd();
 
-const filePath = path.join(cwd, "data", "student.txt");
+const filePath = path.join(cwd, "data", "student.json");
 
 let students;
 
@@ -29,6 +29,7 @@ export const find = (name) => {
     return;
   }
   console.table(student);
+  return student;
 };
 
 export const more = (num) => {
@@ -48,17 +49,46 @@ export const more = (num) => {
   console.table(filterStudent);
 };
 
+export const add = (name, grade) => {
+  const student = students.find(
+    (s) => s.name.toLowerCase().trim() === name.toLowerCase().trim()
+  );
+
+  if (!student) {
+    console.error(`Il n'y a pas d'élève ${name}.`);
+    return;
+  }
+
+  const parsedGrade = parseFloat(grade.trim());
+  if (isNaN(parsedGrade) || parsedGrade < 0 || parsedGrade > 20) {
+    console.error("Vous devez choisir un nombre entre 0 et 20.\n");
+    return;
+  }
+
+  student.notes.push(parsedGrade);
+  console.log(
+    `La note de ${parsedGrade} a bien été rajoutée à ${student.name}`
+  );
+};
+
+export const saveFile = () => {
+  fs.writeFileSync(filePath, JSON.stringify(students, null, 2));
+  console.log("Fichier sauvegardé");
+};
+
 export const commands = [
   {
     name: "list",
     description: "Liste tout les élèves",
   },
   {
-    name: "find <string>",
+    name: "find",
     description: "Cherche puis affiche les infos d'un élève si il existe",
   },
   {
-    name: "more <number>",
+    name: "more",
     description: "Filtre les élèves en fonction de leur moyenne",
   },
+  { name: "add", description: "Ajoute une note à un élève" },
+  { name: "close", description: "Ferme la commande et sauvegarde le fichier" },
 ];

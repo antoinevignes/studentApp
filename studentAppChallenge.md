@@ -1,11 +1,7 @@
-## Développez un programme en JavaScript qui charge les informations des élèves à partir du fichier student.txt
+En reprenant le challenge "studentApp" refactoriser votre code pour intégrer l'utilisation de readline, ajouté une fonctionnalité permettant d'ajouter une note à un éléve en particulier
 
+si tout c'est bien passé un message indique que la note demandé à bien été ajouté à l'élève demandé
 
-### Implémentez les fonctionnalités suivantes dans votre système de gestion des élèves :
-- Une fonctionnalité pour afficher la liste du nom de tous les élèves.
-- Une fonctionnalité pour rechercher et afficher les informations d'un élève spécifique en fonction de son nom.
-- Une fonctionnalité pour filtrer et afficher les élèves ayant obtenu une moyenne supérieure à une valeur spécifiée.
+Lors de l'ajout de note le système demandera le nom de l'élève puis la note que l'on souhaite ajouté
 
-#### Assurez-vous que votre système traite correctement les cas limites, tels que la gestion des entrées utilisateur incorrectes ou la manipulation de données incorrectes.
-
-#### Testez votre système en utilisant différentes commandes pour vous assurer qu'il fonctionne correctement et qu'il produit les résultats attendus.
+Ajoutez également une command "quit" qui sauvegardera les changement apporté et arrétera le processus
